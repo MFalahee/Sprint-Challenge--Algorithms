@@ -2,42 +2,29 @@
 
 ## Exercise I
 
-
-```python
-a)  a = 0
-    while (a < n * n * n):
-      a = a + n * n
-```
-
-
-```
-b)  sum = 0
-    for i in range(n):
-      j = 1
-      while j < n:
-        j *= 2
-        sum += 1
-```
-
-```
-c)  def bunnyEars(bunnies):
-      if bunnies == 0:
-        return 0
-
-      return 2 + bunnyEars(bunnies-1)
-```
-
 a) This one is O(n) because as the input grows, the runtime of the loop grows at ( or about) the same rate each time.
     for example n = 2, 2 iterations of the loop
     n = 3, 3 iterations of the loop
     n = 4, 4 iterations
 
+b) This one is O(n^c) because there are two loops, and for each item in the first loop it iterates through the entire input in the second loop. This function will get out of hand with the number of operations really fast in comparison to the first example.
 
-b) This one is O()
-
-
-c) 
+c) This one, even though it's recursive, is still O(n) because it only increases by one recursive call for each corresponding increase in input.
 
 ## Exercise II
 
+I'd approach this problem like a Binary Search.
 
+Start at the middle floor, len(n//2) and check if an egg breaks. 
+
+  If it doesn't, check if an egg breaks on (f+1).
+    if it does break, your highest floor is F.
+    if not, toss the floors to the left out, and do it again with the array to the right.
+  
+  If it does, check if an egg breaks on (f-1) 
+    if not, Your highest floor is F.
+    if so, toss the floors to the right of F out, and run it again.
+
+Keep going until the second condition is met with breaking or not breaking. That's the threshold for the floor you want.
+
+This problem would be complexity O(log(n)) because we are dividing N in half every time we recursively call the search again. This makes it slightly more efficient than O(n) or an iterative search.
