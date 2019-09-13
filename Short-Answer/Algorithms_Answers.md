@@ -28,12 +28,15 @@ c)  def bunnyEars(bunnies):
 ```
 
 a) This one is O(n) because as the input grows, the runtime of the loop grows at ( or about) the same rate each time.
+    for example n = 2, 2 iterations of the loop
+    n = 3, 3 iterations of the loop
+    n = 4, 4 iterations
 
 
-b) 
+b) This one is O()
 
 
-c)
+c) 
 
 ## Exercise II
 

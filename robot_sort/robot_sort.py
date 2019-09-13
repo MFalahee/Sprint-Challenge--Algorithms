@@ -99,11 +99,9 @@ class SortingRobot:
         # Starting at position zero, light is off.
         # If the light is off, the robot isn't holding an item
         if not self.light_is_on():
-            # print('Light is OFF')
             
             # if the robot can't move left, this is the start of sorting
             if not self.can_move_left():
-                # print('At the start of the list')
                 self.swap_item()
                 self.set_light_on()
                 self.sort()
@@ -124,8 +122,6 @@ class SortingRobot:
             #if we can't move right, we have the smallest item
             if not self.can_move_right():
                 #put the item back. Start moving left and comparing.
-                #while loop for compare_item != None?
-                # print('End of the list')
                 while self.compare_item() != None:
                     self.move_left()
 
@@ -134,8 +130,7 @@ class SortingRobot:
                 self.set_light_off()
                 self.sort()
                     
-
-            # Might need to rewrite this chunk to avoid recursion? It may work with a while loop.
+            # Normal sort method. If we can move right, keep doing it and comparing items
             else: 
                 while self.can_move_right():
                     self.move_right()
